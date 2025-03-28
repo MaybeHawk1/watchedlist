@@ -1,5 +1,9 @@
 # Watchedlist
 ![Watchlist_banner](https://github.com/MaybeHawk1/watchedlist/blob/master/assets/banner.png)
+
+# The app currently does not work on windows
+Because i can't install sqlite3 on windows
+
 # Table of Contents
 - [Watchedlist](#watchedlist)
 - [Table of Contents](#table-of-contents)
