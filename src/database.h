@@ -1,7 +1,11 @@
 #ifndef _DATABASE_H
 #define _DATABASE_H
 
-#include <sqlite3.h>
+#if defined(WIN32) && !defined(UNIX)
+    #include "sqlite3/sqlite3.h"
+#else
+    #include <sqlite3.h>
+#endif
 
 #define MOVIE_NOT_NULL(str) {\
     if (str == NULL)\
@@ -29,7 +33,7 @@ int add_movie(char *movie_name, int movie_year);
 *   @param {sqlite3*} db database
 *   @returns {int} 0 if successful, 1 if unsuccessfull
 */
-int remove_movie(const char *movie_name, sqlite3* db);
+int remove_movie(const char *movie_name);
 
 /*
 *   View all movies

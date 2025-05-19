@@ -1,5 +1,17 @@
 all:
-	gcc -o ../bins/watchedlist main.c database.c utils.c -lsqlite3 
+	gcc -o ../bin/watchedlist main.c database.c utils.c -I sqlite3 -L sqlite3 -lsqlite3 -Wall -Wextra
 
-debug:
-	gcc -g -o ../debug/watchedlist main.c database.c utils.c -lsqlite3
+linux:
+	gcc -o ../bin/watchedlist main.c database.c utils.c -lsqlite3 -Wall -Wextra
+
+debug_linux:
+	gcc -o -g ../bin/watchedlist main.c database.c utils.c -lsqlite3 -Wall -Wextra
+
+windows:
+	gcc -o ../bin/watchedlist main.c database.c utils.c -I sqlite3 -L sqlite3 -lsqlite3 -Wall -Wextra
+
+clean:
+	rm -r ../bin
+
+clean_windows:
+	rm -r -Force ../bin
